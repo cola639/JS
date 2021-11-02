@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event delegation</title>
+  </head>
+  <body>
+    <ul id="myLinks">
+      <li id="take shower">take shower</li>
+      <li id="eat">eat</li>
+      <li id="sleep">sleep</li>
+    </ul>
+  </body>
+  <script>
+    let listDelagation = document.getElementById("myLinks");
+    listDelagation.addEventListener("click", (event) => {
+      let target = event.target;
+      console.log(target);
+    });
+  </script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="gb2312" />
+    <title>confirm()代码实例</title>
+  </head>
+  <body>
+    <input type="button" id="btn" value="点击弹出确认框" />
+  </body>
+
+  <script type="text/javascript">
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+      if (confirm("真的要删除吗?")) {
+        window.close();
+      } else {
+        return;
+      }
+    };
+  </script>
+</html>
