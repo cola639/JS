@@ -25,3 +25,14 @@ function promise() {
     });
 }
 promise();
+
+////2
+console.log(1);
+new Promise((resolve, reject) => {
+  console.log(2);
+  setTimeout(() => {
+    resolve(2);
+  }, 1000);
+}).then((value) => {
+  console.log(value + 2);
+});
