@@ -1,11 +1,19 @@
-function logName(name) {
-  console.log(name);
+function getName(name, callback) {
+  setTimeout(() => {
+    console.log(name);
+    callback("18");
+  }, 2000);
+}
+
+function getAge(age) {
+  console.log(age);
 }
 
 //callback
 function getUser(name, callback) {
-  setTimeout(() => {}, 0);
-  callback(name);
+  setTimeout(() => {
+    callback(name, getAge);
+  }, 1000);
 }
 
-getUser("John", logName);
+getUser("John", getName);

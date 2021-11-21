@@ -11,7 +11,7 @@ function promise() {
           setTimeout(() => {
             console.log(value);
             resolve({ name: "cola639", date: "2021-07" });
-          }, 1000);
+          }, 2000);
         })
     )
     .then((value) => {
