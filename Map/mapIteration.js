@@ -1,12 +1,10 @@
-//create Map
+//Map declare
 let myMap = new Map();
 
-//declare value
 let keyObj = {};
 let keyFunc = function () {};
 let keySring = "a string";
 
-//set key
 myMap.set(keyObj, "和键keyObj关联的值");
 myMap.set(keyFunc, "和键keyFunc关联的值");
 myMap.set(keySring, "和键keySring关联的值");
@@ -27,7 +25,7 @@ for (let [key, value] of myMap.entries()) {
 // function () {} = 和键keyFunc关联的值
 // a string = 和键keySring关联的值
 
-// 3 key
+// 3 myMap.keys()
 for (let key of myMap.keys()) {
   console.log(key);
 }
@@ -35,7 +33,7 @@ for (let key of myMap.keys()) {
 // function () {}
 // a string
 
-// 4 value
+// 4 myMap.values()
 for (let value of myMap.values()) {
   console.log(value);
 }
