@@ -1,17 +1,18 @@
-//1 situation ->2 solution ->3 detail
+//定义：当持续触发事件时，保证隔间时间触发一次事件。
+//场景: 1图片懒加载 滚动加载 2高频点击 频繁提交表单
 
 function throttle(fn, delay) {
-  let begin = 0;
-  let firstTime = true;
+  let begin = 0
+  let firstTime = true
   return function () {
-    let now = Date.now();
+    let now = Date.now()
 
     if (firstTime) {
-      fn.apply(this, arguments);
-      firstTime = false;
+      fn.apply(this, arguments)
+      firstTime = false
     } else {
-      if (now - begin > delay) fn.apply(this, arguments);
-      begin = now;
+      if (now - begin > delay) fn.apply(this, arguments)
+      begin = now
     }
-  };
+  }
 }
