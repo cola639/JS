@@ -38,8 +38,10 @@ const beforeFlatten = [[1, [2, 3]], 4, 5]
 
 function flatten(beforeFlatten) {
   return beforeFlatten.reduce((accumulator, item) => {
-    return accumulator.concat(Array.isArray(item) ? flatten(item) : item)
+    return accumulator.concat(item instanceof Array ? flatten(item) : item)
   }, [])
 }
 
-console.log(`flatten ${flatten(beforeFlatten)}`)
+const res = flatten(beforeFlatten)
+
+console.log(`flatten ${res}`)

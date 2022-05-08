@@ -1,19 +1,19 @@
 function getName(name, callback) {
   setTimeout(() => {
-    console.log(name);
-    callback("18");
-  }, 2000);
+    console.log(name)
+    callback('18')
+  }, 2000)
 }
 
 function getAge(age) {
-  console.log(age);
+  console.log(age)
 }
 
-//callback
+// callback
 function getUser(name, callback) {
   setTimeout(() => {
-    callback(name, getAge);
-  }, 1000);
+    callback(name, getAge)
+  }, 1000)
 }
 
-getUser("John", getName);
+getUser('John', getName)
