@@ -7,6 +7,8 @@ p.then(() => console.log('second'))
   .then(() => console.log('third'))
   .then(() => console.log('fourth'))
 
+console.log('seventh')
+
 setTimeout(() => {
   console.log('sixth')
 }, 0)

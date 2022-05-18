@@ -1,4 +1,4 @@
-// Promise
+// async_promise
 function promise() {
   new Promise((resolve, reject) => {
     setTimeout(() => {

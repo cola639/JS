@@ -1,12 +1,11 @@
 // grammer
-// arr.reduce((accumulator,item,index,array)=>{},initvalue)
+// arr.reduce((accumulator,currentValue,index,array)=>{},initvalue)
 
 // 1 accumulation
 const arr = [{ x: 1 }, { x: 2 }, { x: 3 }]
 
 const sum = arr.reduce(
-  (accumulator, currentValue) => accumulator + currentValue.x,
-  0
+  (accumulator, currentValue) => accumulator + currentValue.x
 )
 console.log(`accumulation ${sum}`)
 
@@ -26,7 +25,7 @@ const users = [
 
 const obj = {} // 空对象标识重复值
 const deduplicationUser = users.reduce((accumulator, item) => {
-  obj[item.id] ? null : (obj[item.id] = true && accumulator.push(item))
+  obj[item.id] ? null : (obj[item.id] = true && accumulator.push(item)) // 标记为true并push进数组
   return accumulator
 }, [])
 console.log(deduplicationUser)
