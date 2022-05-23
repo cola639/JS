@@ -5,7 +5,7 @@
 function throttle(fn, delay) {
   let begin = 0
   let firstTime = true
-  return function () {
+  return function (...arguments) {
     let now = Date.now()
 
     if (firstTime) {

@@ -4,7 +4,7 @@ function Person(name, age, job) {
   this.age = age
   this.job = job
 
-  return 1111
+  return 1111 // no worked  if { a: 1111 } worked
 }
 
 let person1 = new Person('john', '18', 'techer')
@@ -15,8 +15,7 @@ function myNew(fn, ...arguments) {
 
   obj.__proto__ = fn.prototype
 
-  //处理不同返回值的影响(原始值,对象)
-  let newResult = fn.apply(obj, arguments)
+  let newResult = fn.apply(obj, arguments) //处理不同返回值的影响(原始值,对象)
 
   return newResult instanceof Object ? newResult : obj
 }

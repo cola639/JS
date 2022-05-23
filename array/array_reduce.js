@@ -24,8 +24,8 @@ const users = [
 ]
 
 const obj = {} // 空对象标识重复值
-const deduplicationUser = users.reduce((accumulator, item) => {
-  obj[item.id] ? null : (obj[item.id] = true && accumulator.push(item)) // 标记为true并push进数组
+const deduplicationUser = users.reduce((accumulator, current) => {
+  obj[current.id] ? null : (obj[current.id] = true && accumulator.push(current)) // 标记为true并push进数组
   return accumulator
 }, [])
 console.log(deduplicationUser)
