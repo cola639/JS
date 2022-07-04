@@ -23,12 +23,16 @@ const users = [
   { id: 3, name: '小孙' },
 ]
 
-const obj = {} // 空对象标识重复值
-const deduplicationUser = users.reduce((accumulator, current) => {
-  obj[current.id] ? null : (obj[current.id] = true && accumulator.push(current)) // 标记为true并push进数组
-  return accumulator
-}, [])
-console.log(deduplicationUser)
+function deduplication(arr) {
+  const obj = {} // 空对象标识重复值
+  return arr.reduce((accumulator, currentValue) => {
+    obj[currentValue.id]
+      ? null
+      : (obj[currentValue.id] = true && accumulator.push(currentValue))
+    return accumulator
+  }, [])
+}
+console.log(deduplication(users))
 
 // 3 flatten
 // 思路：

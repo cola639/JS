@@ -20,7 +20,7 @@ console.log(arr)
 // Quick Sort
 arr = [5, 3, 6, 2, 8, 10]
 function quickSort(arr) {
-  if (arr.length <= 1) return arr
+  if (arr.length <= 1) return arr // 当小于 1 个元素开始返回
 
   const pivotIndex = Math.floor(arr.length / 2)
   const pivotNum = arr.splice(pivotIndex, 1)[0]

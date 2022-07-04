@@ -1,6 +1,9 @@
 //macro-task setTimeout、setInterval、setImmediate
 function func1() {
   console.log(1)
+  setTimeout(() => {
+    console.log(4)
+  }, 10)
 }
 
 function func2() {

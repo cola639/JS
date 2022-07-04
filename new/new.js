@@ -1,4 +1,4 @@
-//1.new的作用
+// 1.new的作用
 function Person(name, age, job) {
   this.name = name
   this.age = age
@@ -9,13 +9,13 @@ function Person(name, age, job) {
 
 let person1 = new Person('john', '18', 'techer')
 
-//2.实现一个new
+// 2.实现一个new
 function myNew(fn, ...arguments) {
   let obj = {}
 
   obj.__proto__ = fn.prototype
 
-  let newResult = fn.apply(obj, arguments) //处理不同返回值的影响(原始值,对象)
+  let newResult = fn.apply(obj, ...arguments) //处理不同返回值的影响(原始值,对象)
 
   return newResult instanceof Object ? newResult : obj
 }
