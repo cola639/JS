@@ -13,7 +13,7 @@ class Queue {
     return r
   }
   callQueue() {
-    console.log(this.items)
+    console.log('start callBack', this.items)
     this.items.forEach((eachFn) => eachFn())
   }
   front() {

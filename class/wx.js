@@ -11,6 +11,7 @@ class Wx extends Queue {
   }
 
   ready(readyArr) {
+    console.log('readyCallBack Init')
     readyArr.forEach((item) => {
       this.enqueue(item)
     })
@@ -23,5 +24,5 @@ const fn3 = () => console.log('call fn3')
 const readyArr = [fn1, fn2, fn3]
 
 const wx = new Wx()
-wx.config('config params')
+wx.config('pass config params')
 wx.ready(readyArr)
