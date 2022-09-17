@@ -10,7 +10,7 @@ const cloneObj = {
   name: 'martin',
 }
 
-// 1 对输入数据类型判断 2 创建空数组或空对象 3 递归进行遍历赋值
+// recursive
 function deepClone(obj) {
   if (typeof obj !== 'object') return
   let newObj = obj instanceof Array ? [] : {}

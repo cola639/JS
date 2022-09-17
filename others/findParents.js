@@ -22,23 +22,43 @@ const caseReason = [
 ]
 const value = '4'
 
+// 案由找寻父节点方法
 function findParent(value) {
-  let grandValue, fartherValue, childValue
-  for (let i = 0; i < caseReason.length; i++) {
-    grandValue = caseReason[i]['value']
-    const caseReasonChild = caseReason[i]['children']
-    if (!caseReasonChild.length) break
-    console.log(caseReasonChild)
+  let caseReasonList = JSON.parse(localStorage.getItem('caseReasonList'))
+  let grandparentValue, fartherValue, grandsonValue
 
-    for (let j = 0; j < caseReasonChild.length; j++) {
-      fartherValue = caseReasonChild[j]['value']
-      const caseReasonGrand = caseReasonChild[j]['children']
-      if (!caseReasonGrand.length) break
-      console.log(caseReasonGrand)
+  for (let i = 0; i < caseReasonList.length; i++) {
+    // set next start condition
+    const caseReasonGrandparent = caseReasonList[i]['children']
 
-      if (value === caseReasonGrand[0]['value']) {
-        childValue = caseReasonGrand[0]['value']
-        return console.log(grandValue, fartherValue, childValue)
+    // operate
+    grandparentValue = caseReasonList[i]['value']
+
+    for (let j = 0; j < caseReasonGrandparent.length; j++) {
+      // set next start condition
+      const caseReasonFarther = caseReasonGrandparent[j]['children']
+
+      // operate
+      fartherValue = caseReasonGrandparent[j]['value']
+      if (value === fartherValue) {
+        return [grandparentValue]
+      }
+
+      for (let h = 0; h < caseReasonFarther.length; h++) {
+        // set next start condition
+
+        // operate
+        grandsonValue = caseReasonFarther[h]['value']
+        if (value === caseReasonFarther[h]['value']) {
+          console.log(
+            `grandparentValue, fartherValue, grandsonValue ${[
+              grandparentValue,
+              fartherValue,
+              grandsonValue,
+            ]}`
+          )
+          return [grandparentValue, fartherValue]
+        }
       }
     }
   }
