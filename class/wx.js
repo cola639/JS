@@ -1,4 +1,4 @@
-// import Queue from './queue'
+// import Queue from './queue' // need babel-loader
 const Queue = require('./queue')
 
 class Wx extends Queue {

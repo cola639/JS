@@ -1,10 +1,7 @@
 class Queue {
   items = []
 
-  constructor() {
-    // console.log('constructor ')
-    // items.set(this, [])
-  }
+  constructor() {}
   enqueue(element) {
     this.items.push(element)
   }
@@ -31,17 +28,3 @@ class Queue {
 }
 
 module.exports = Queue
-// export default Queue
-// var stack = []
-// function fn1() {
-//   console.log('第一个调用')
-// }
-// function fn2() {
-//   console.log('第二个调用')
-// }
-// // function fn3() {
-// //   console.log('第三个调用')
-// // }
-// stack.push(fn1, fn2, fn3)
-
-// stack.forEach((eachFn) => eachFn())
