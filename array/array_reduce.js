@@ -2,12 +2,14 @@
 // arr.reduce((accumulator,currentValue,index,array)=>{},initvalue)
 
 // 1 accumulation
-const arr = [{ x: 1 }, { x: 2 }, { x: 3 }]
 
-const sum = arr.reduce(
-  (accumulator, currentValue) => accumulator + currentValue.x
+let arr = [{ x: 1 }, { x: 2 }, { x: 3 }]
+let sum = arr.reduce(
+  (previousValue, currentValue) => previousValue + currentValue.x,
+  (initialValue = 0)
 )
-console.log(`accumulation ${sum}`)
+
+console.log(sum) // logs 6
 
 // 2 deduplication
 // 思路:
@@ -20,15 +22,13 @@ const users = [
   { id: 1, name: '小周' },
   { id: 2, name: '小陈' },
   { id: 2, name: '小李' },
-  { id: 3, name: '小孙' },
+  { id: 3, name: '小孙' }
 ]
 
 function deduplication(arr) {
   const obj = {} // 空对象标识重复值
   return arr.reduce((accumulator, currentValue) => {
-    obj[currentValue.id]
-      ? null
-      : (obj[currentValue.id] = true && accumulator.push(currentValue))
+    obj[currentValue.id] ? null : (obj[currentValue.id] = true && accumulator.push(currentValue))
     return accumulator
   }, [])
 }
@@ -46,5 +46,4 @@ function flatten(beforeFlatten) {
 }
 
 const res = flatten(beforeFlatten)
-
 console.log(`flatten ${res}`)

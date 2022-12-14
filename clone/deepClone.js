@@ -7,12 +7,12 @@ const cloneObj1 = {
   say: function () {
     console.log('say')
   },
-  name: 'martin',
+  name: 'martin'
 }
 
 const cloneObj2 = [
   { score: 1, avatar: 'test.url1' },
-  { score: null, avatar: 'test.url2' },
+  { score: null, avatar: 'test.url2' }
 ]
 
 // recursive
@@ -22,13 +22,15 @@ function deepClone(obj) {
   for (let key in obj) {
     // hasOwnProperty避免拷原型链内容
     if (obj.hasOwnProperty(key)) {
-      newObj[key] =
-        typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key]
+      newObj[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key]
     }
   }
 
   return newObj
 }
+
+let result = deepClone(cloneObj1)
+console.log(result)
 
 function strictDeepClone(data) {
   // string,number,bool,null,undefined,symbol
@@ -74,9 +76,6 @@ function strictDeepClone(data) {
     return data
   }
 }
-
-let result = deepClone(cloneObj1)
-console.log(result)
 
 result = strictDeepClone(cloneObj2)
 console.log(JSON.stringify(result))
