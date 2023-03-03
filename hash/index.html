@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./crypto-js/crypto-js.js"></script>
+    <script src="./crypto-js/aes.js"></script>
+  </head>
+  <body></body>
+  <script>
+    const src = '123'
+    let key = '3132333435363738393041424344454631323334353637383930414243444566'
+    let iv = '666162616f313233666162616f313233'
+    key = CryptoJS.enc.Hex.parse(key)
+    iv = CryptoJS.enc.Hex.parse(iv)
+
+    console.log('密钥：', key)
+    console.log('iv:', iv)
+    console.log('原字符串：', src)
+
+    const enc = CryptoJS.AES.encrypt(src, key, {
+      iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+    })
+
+    // console.log('加密:', enc.toString())
+    const enced = enc.ciphertext.toString()
+    console.log('加密：', enced, typeof enced)
+
+    const dec = CryptoJS.AES.decrypt(CryptoJS.format.Hex.parse(enced), key, {
+      iv,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7
+    })
+    console.log('解密:', CryptoJS.enc.Utf8.stringify(dec))
+  </script>
+</html>
