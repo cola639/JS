@@ -1,34 +1,17 @@
 /**
- * get url param
- * @param {*} query
- * @return {*} query value
- */
-function getUrlParam(query) {
-  const reg = new RegExp('(^|&)' + query + '=([^&]*)(&|$)')
-  const r =
-    window.location.search.substr(1).match(reg) ||
-    window.location.hash
-      .substring(window.location.hash.search(/\?/) + 1)
-      .match(reg)
-  if (r != null) {
-    return decodeURIComponent(r[2])
-  }
-}
-
-/**
- * get url params object
+ * Get url params object
  *
  * @param {string} url
  * @returns {Object}
  */
-function paramToObj(url = window.location.href) {
+export function paramsToObj(url = window.location.href) {
   const search = decodeURIComponent(url.split('?')[1]).replace(/\+/g, ' ')
   if (!search) {
     return {}
   }
   const obj = {}
   const searchArr = search.split('&')
-  searchArr.forEach((v) => {
+  searchArr.forEach(v => {
     const index = v.indexOf('=')
     if (index !== -1) {
       const name = v.substring(0, index)
@@ -37,4 +20,14 @@ function paramToObj(url = window.location.href) {
     }
   })
   return obj
+}
+/**
+ * If empty obj
+ *
+ * @param {string} url
+ * @returns {boolean}
+ */
+export function isEmptyObj(obj) {
+  const arr = Object.keys(obj)
+  return arr.length === 0
 }
