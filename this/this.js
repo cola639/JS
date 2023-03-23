@@ -9,7 +9,7 @@ windowThis()
 const object = {
   objectThis() {
     console.log(this)
-  },
+  }
 }
 
 object.objectThis()
