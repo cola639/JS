@@ -16,9 +16,7 @@
 
   <!-- debounce  -->
   <script>
-    document
-      .getElementById('debounce')
-      .addEventListener('click', debounce(submit, 3 * 1000, true))
+    document.getElementById('debounce').addEventListener('click', debounce(submit, 3 * 1000, true))
     function submit() {
       console.log('request data')
     }
