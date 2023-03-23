@@ -1,7 +1,7 @@
 // hash mode https://poc.videocomm.net/admin/index.html#/
 let url = 'www.imooc.com?name=xiaodangao&age=22&sex=0&phone=19023271580' // history mode
 
-function getUrlParams(url) {
+export function getUrlParams(url = window.location.href) {
   let obj = {}
   let temp
   let paramsGroup = url.split('?')[1] // name=QinYanFei&age=22&sex=0&phone=13083771680

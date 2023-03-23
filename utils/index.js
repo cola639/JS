@@ -22,6 +22,25 @@ export function paramsToObj(url = window.location.href) {
   return obj
 }
 /**
+ * Get url params object
+ *
+ * @param {string} url
+ * @returns {Object}
+ */
+export function getUrlParams(url = window.location.href) {
+  let obj = {}
+  let temp
+  let paramsGroup = url.split('?')[1] // name=QinYanFei&age=22&sex=0&phone=13083771680
+  let paramsObj = paramsGroup.split('&') // ["name=QinYanFei", "age=22", "sex=0", "phone=13083771680"]
+  for (let item of paramsObj) {
+    // for in是遍历（object）键名，for of是遍历（array）键值。
+    console.log(item) // name=QinYanFei,age=22...
+    temp = item.split('=') // 依次["name", "QinYanFei"]  ["age", "22"]  ["sex", "0"] ["phone", "13083771680"]
+    obj[temp[0]] = temp[1] // 键值 ：键名
+  }
+  return obj
+}
+/**
  * If empty obj
  *
  * @param {string} url
