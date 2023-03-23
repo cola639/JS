@@ -84,3 +84,5 @@ const searchPool = [
     title: ['若依官网']
   }
 ]
+
+module.exports = searchPool
