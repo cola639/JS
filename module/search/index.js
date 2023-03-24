@@ -1,9 +1,14 @@
 const Fuse = require('./fuse.min')
 const searchPool = require('./data')
-
-console.log('🚀 >> searchPool:', searchPool)
 const query = '系统管理'
+
+console.log('searchPool: ', searchPool)
+console.log('query: ', query)
+
 let fuseSearch = undefined
+initFuse(searchPool)
+const searchRes = fuseSearch.search(query)
+console.log('searchRes: ', searchRes)
 
 function initFuse(list) {
   fuseSearch = new Fuse(list, {
@@ -24,7 +29,3 @@ function initFuse(list) {
     ]
   })
 }
-
-initFuse(searchPool)
-const searchRes = fuseSearch.search(query)
-console.log('🚀 >> searchRes:', searchRes)
