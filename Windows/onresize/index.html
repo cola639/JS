@@ -21,7 +21,10 @@
       console.log('fun2 resize')
     }
 
-    // window.onresize = debounce(() => fun1(), 1 * 1000, true)
-    window.onresize = debounce(fun2, 1 * 1000, true)
+    console.log('typeof fun1', fun1)
+    console.log('typeof fun2', fun2)
+
+    window.onresize = debounce(fun1, 1 * 1000, false)
+    // window.onresize = debounce(fun2, 1 * 1000, true)
   </script>
 </html>
