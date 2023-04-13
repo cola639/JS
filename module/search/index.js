@@ -5,11 +5,6 @@ const query = '系统管理'
 console.log('searchPool: ', searchPool)
 console.log('query: ', query)
 
-let fuseSearch = undefined
-initFuse(searchPool)
-const searchRes = fuseSearch.search(query)
-console.log('searchRes: ', searchRes)
-
 function initFuse(list) {
   fuseSearch = new Fuse(list, {
     shouldSort: true,
@@ -28,4 +23,11 @@ function initFuse(list) {
       }
     ]
   })
+
+  return fuseSearch
 }
+
+let searchEngine = initFuse(searchPool)
+
+const searchRes = searchEngine.search(query)
+console.log('searchRes: ', searchRes)
