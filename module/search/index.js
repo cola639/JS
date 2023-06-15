@@ -6,7 +6,7 @@ console.log('searchPool: ', searchPool)
 console.log('query: ', query)
 
 function initFuse(list) {
-  fuseSearch = new Fuse(list, {
+  const fuseSearch = new Fuse(list, {
     shouldSort: true,
     threshold: 0.4,
     location: 0,
