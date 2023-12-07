@@ -19,3 +19,11 @@ map1.delete('b')
 
 console.log(map1.size)
 // Expected output: 2
+
+// 2 Array and Map
+const map2 = new Map()
+map2.set('a', 1)
+map2.set('b', 2)
+const arr = [...map2]
+console.log(arr)
+// Expected output: Array [ [ 'a', 1 ], [ 'b', 2 ] ]
