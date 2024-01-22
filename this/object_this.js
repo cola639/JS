@@ -1,7 +1,8 @@
 // object
 const object = {
+  name: 'John',
   logThis() {
-    console.log(this)
+    console.log('object this:', this.name)
   }
 }
 
