@@ -1,26 +1,16 @@
-// normal function
-function windowThis() {
-  console.log(this)
-}
-
-windowThis()
-
-// object
-const object = {
-  objectThis() {
-    console.log(this)
-  }
-}
-
-object.objectThis()
-
-// new Function
-function newFunc(name) {
+// protoType this
+// 原型链this 指向生成的对象本身
+function protoTypeFunc(name) {
   this.name = name
   this.sayName = function () {
-    console.log(this.name)
+    console.log('this name :', this.name)
   }
 }
 
-let fun1 = new newFunc('John')
+protoTypeFunc.prototype.getName = function () {
+  console.log('this name :', this.name)
+}
+
+let fun1 = new protoTypeFunc('John')
 fun1.sayName()
+fun1.getName()
