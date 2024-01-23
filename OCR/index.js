@@ -1,5 +1,6 @@
 const path = require('path')
-const imagePath = path.join(__dirname, 'english.png')
+const imagePath = path.join(__dirname, '/english.png')
+console.log('🚀 >> imagePath: ', imagePath)
 
 const { createWorker } = require('tesseract.js')
 
