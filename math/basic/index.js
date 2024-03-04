@@ -9,3 +9,6 @@ console.log('floorRes >> ', floorRes) // Output: 9
 // 合并使用 生成10内包括0-9
 const zeroToNine = Math.floor(Math.random() * 10)
 console.log('zeroToNine >> ', zeroToNine)
+
+// Infinity 无限大
+const max = Infinity
