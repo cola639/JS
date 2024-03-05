@@ -4,11 +4,14 @@ map1.set('a', 1)
 map1.set('b', 2)
 map1.set('c', 3)
 
+hasKey = map1.has('a')
+console.log('has ', hasKey)
+
 console.log(map1)
 // Expected output: 1
 
 map1.set('a', 97)
-
+map1.get('a')
 console.log(map1.get('a'))
 // Expected output: 97
 
