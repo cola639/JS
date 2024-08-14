@@ -5,14 +5,14 @@ class Wx extends Queue {
   config(info) {
     console.log(info)
     setTimeout(() => {
-      console.log('config sucess')
+      console.log('config success')
       this.callQueue()
     }, 2 * 1000)
   }
 
   ready(readyArr) {
     console.log('readyCallBack Init')
-    readyArr.forEach((item) => {
+    readyArr.forEach(item => {
       this.enqueue(item)
     })
   }

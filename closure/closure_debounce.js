@@ -17,11 +17,21 @@ function debounce(fn, delay, immediate) {
   return function (...args) {
     t && clearTimeout(t)
     if (immediate && !t) {
-      fn.call(this, args)
+      fn.apply(this, args)
       immediate = false
     }
     t = setTimeout(() => {
       fn.apply(this, args)
+    }, delay)
+  }
+}
+
+export function debounce(fn, delay) {
+  let timeoutId
+  return function (...args) {
+    if (timeoutId) clearTimeout(timeoutId)
+    timeoutId = setTimeout(() => {
+      fn(...args)
     }, delay)
   }
 }
