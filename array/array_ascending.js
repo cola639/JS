@@ -18,23 +18,30 @@ for (i = 0; i < arr.length - 1; i++) {
 console.log(arr)
 
 // Quick Sort
-arr = [5, 3, 6, 2, 8, 10]
 function quickSort(arr) {
-  if (arr.length <= 1) return arr // 当小于 1 个元素开始返回
+  if (arr.length <= 1) return arr // 当数组只剩一个或空时，返回
 
-  const pivotIndex = Math.floor(arr.length / 2)
-  const pivotNum = arr.splice(pivotIndex, 1)[0]
+  // 选取中间元素作为 pivot
+  const mid = Math.floor(arr.length / 2)
+  const pivot = arr[mid]
+
+  // 分成两个区块
   let left = []
   let right = []
 
+  // 将小于 pivot 的放在 left，大于 pivot 的放在 right
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < pivotNum) {
-      left.push(arr[i])
+    if (i === mid) continue // 跳过 pivot 元素
+    if (arr[i] < pivot) {
+      left.push(arr[i]) // 小于 pivot 的放入左边
     } else {
-      right.push(arr[i])
+      right.push(arr[i]) // 大于 pivot 的放入右边
     }
   }
 
-  return [...quickSort(left), pivotNum, ...quickSort(right)]
+  // 递归排序左边和右边，合并结果
+  return [...quickSort(left), pivot, ...quickSort(right)]
 }
-console.log(quickSort(arr))
+
+const arr1 = [5, 3, 6, 2, 8, 10]
+console.log(quickSort(arr1))

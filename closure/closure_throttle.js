@@ -23,3 +23,16 @@ function throttle(fn, delay, firstTime = true) {
     }
   }
 }
+
+function throttle(fn, delay) {
+  let begin = 0
+
+  return function (...args) {
+    const now = Date.now()
+
+    if (now - begin > delay) {
+      fn.apply(this, args)
+      begin = now
+    }
+  }
+}
