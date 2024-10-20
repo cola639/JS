@@ -8,10 +8,6 @@ const person1 = { name: 'Alice' }
 greet.call(person, 'Hello', '!') // 输出: Hello, Alice!
 
 /** 2 apply */
-function greet(greeting, punctuation) {
-  console.log(greeting + ', ' + this.name + punctuation)
-}
-
 const person2 = { name: 'Alice' }
 
 greet.apply(person, ['Hello', '!']) // 输出: Hello, Alice!
