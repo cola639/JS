@@ -1,4 +1,4 @@
-// grammer
+// grammar
 // arr.reduce((accumulator,currentValue,index,array)=>{},initvalue)
 
 // 1 accumulation
